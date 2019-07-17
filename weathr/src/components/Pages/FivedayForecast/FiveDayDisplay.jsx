@@ -1,29 +1,29 @@
     
-import React from 'react';
-import FiveDayForecast from  './FiveDayForecast.jsx'
+// import React from 'react';
+// import FiveDayForecast from  './FiveDayForecast.jsx'
 
-const FiveDayDisplay = props =>{
+// const FiveDayDisplay = props =>{
 
-    console.log(props);
+//     console.log(props);
 
-    return(
+//     return(
 
-        <ul className='character-list'>
-        {props.fivedayforecast.map( day => {
+//         <ul className='character-list'>
+//         {props.fivedayforecast.map( day => {
 
-     return  ( <FiveDayDisplay 
+//      return  ( <FiveDayDisplay 
         
-            key = {day}
-            temp = {day}
+//             key = {day}
+//             temp = {day}
 
-        /> 
- ) } )
+//         /> 
+//  ) } )
         
         
-        }
+//         }
 
-        </ul>
-    );
-}
+//         </ul>
+//     );
+// }
 
-export default FiveDayDisplay;
+// export default FiveDayDisplay;
