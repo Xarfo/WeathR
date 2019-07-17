@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "./components/Pages/CurrentTemp/Form.jsx";
 import Titles from "./components/Pages/CurrentTemp/Titles";
-import CurrentTempDisplay from "./components/Pages/CurrentTemp/CurrentTempDisplay";
+import CurrentTempDisplay from "./components/Pages/CurrentTemp/CurrentTemp/CurrentTempDisplay.jsx";
 
 const API_KEY = "910e092423bb6a4d8eda2017888b3a8c";
 
@@ -48,10 +48,8 @@ class CurrentTemp extends React.Component {
                   <Form getWeather={this.getWeather} />
                   <CurrentTempDisplay 
                     temperature={this.state.temperature} 
-                    humidity={this.state.humidity}
                     city={this.state.city}
                     country={this.state.country}
-                    description={this.state.description}
                     error={this.state.error}
                   />
                 </div>
