@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, NavLink } from "react-router-dom";
 import CurrentTemp from "./components/Pages/CurrentTemp/CurrentTemp.jsx";
-import FiveDaysForecast from './components/Pages/FiveDaysForecast/FiveDaysForecast.jsx'
+import FiveDayForecast from "./components/Pages/Forecast/FiveDayForecast.jsx";
 
 
 class BaseRoutes extends React.Component {
@@ -11,10 +11,10 @@ class BaseRoutes extends React.Component {
       <>
       <div className='navBar'>        
         <NavLink to="/">
-          Current Temperature
+          <h1>Current Temperature</h1>
         </NavLink>
-        <NavLink to="/5daysforcast">
-         Five Days Forecast
+        <NavLink to="/forecast">
+         <h1>Forecast</h1>
         </NavLink>
       </div> 
       <Route
@@ -24,8 +24,8 @@ class BaseRoutes extends React.Component {
         />
         <Route
           exact
-          path="/5daysforecast"
-          component={FiveDaysForecast}
+          path="/forecast"
+          component={FiveDayForecast}
         />
       </>
     );

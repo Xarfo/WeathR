@@ -1,6 +1,6 @@
 import React from "react";
 
-const FiveDaysForecastDisplay = props => (
+const ForecastDisplayList = props => (
 	<div className="weather__info">
 	 <div className="weather__info">
 	 {	
@@ -16,9 +16,8 @@ const FiveDaysForecastDisplay = props => (
 	 { 
 	 	props.error && <p className="weather__error">{ props.error }</p>  
 	 }
-	</div>
-	 }
+	</div> 
 	</div>
 );
 
-export default FiveDaysForecastDisplay;
+export default ForecastDisplayList;

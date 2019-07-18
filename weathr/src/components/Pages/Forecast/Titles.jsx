@@ -3,7 +3,7 @@ import logo from  "/Users/abdulahmad/Lambda-Projects/WeathR/weathr/src/img/logo.
 
 const Titles = () => (
 	<div>
-		<h1 className="title-container__title"><h1>Five Days Forecast WeathR</h1></h1>
+		<h1 className="title-container__title"><h1>ForecastR</h1></h1>
         <img src={logo} alt="Logo" />
 	</div>
 );
