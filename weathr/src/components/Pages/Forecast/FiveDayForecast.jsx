@@ -1,11 +1,11 @@
 import React from "react";
 import Form from "./Form.jsx";
 import Titles from "./Titles";
-import CurrentTempDisplay from "./CurrentTempDisplay.jsx";
+import ForecastList from "./ForecastList.jsx";
 
 const API_KEY = "910e092423bb6a4d8eda2017888b3a8c";
 
-class CurrentTemp extends React.Component {
+class FiveDayForecast extends React.Component {
   state = {
     temperature: undefined,
     error: undefined,
@@ -17,7 +17,7 @@ class CurrentTemp extends React.Component {
 //     this.getWeather('http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric');
 //   }
 
-getWeather = async (e) => {
+getForecast = async (e) => {
   e.preventDefault();
   const city = e.target.elements.city.value;
   const country = e.target.elements.country.value;
@@ -52,8 +52,8 @@ getWeather = async (e) => {
                   <Titles />
                 </div>
                 <div className="col-xs-7 form-container">
-                  <Form getWeather={this.getWeather} />
-                  <CurrentTempDisplay 
+                  <Form getForecast={this.getForecast} />
+                  <ForecastList 
                     temperature={this.state.temperature} 
                     city={this.state.city}
                     country={this.state.country}
@@ -69,4 +69,4 @@ getWeather = async (e) => {
   }
 };
 
-export default CurrentTemp;
+export default FiveDayForecast;
