@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { Route, NavLink } from "react-router-dom";
 import CurrentTemp from "./components/Pages/CurrentTemp/CurrentTemp.jsx";
 import FiveDaysForecast from './components/Pages/FiveDaysForecast/FiveDaysForecast.jsx'
 
