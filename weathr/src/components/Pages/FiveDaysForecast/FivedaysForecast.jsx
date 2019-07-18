@@ -1,11 +1,11 @@
 import React from "react";
 import Form from "./Form.jsx";
 import Titles from "./Titles";
-import CurrentTempDisplay from "./CurrentTempDisplay.jsx";
+import FiveDaysForecastDisplay from "./FiveDaysForecastDisplay.jsx";
 
 const API_KEY = "910e092423bb6a4d8eda2017888b3a8c";
 
-class CurrentTemp extends React.Component {
+class FiveDaysForecast extends React.Component {
   state = {
     temperature: undefined,
     error: undefined,
@@ -51,7 +51,7 @@ class CurrentTemp extends React.Component {
                 </div>
                 <div className="col-xs-7 form-container">
                   <Form getWeather={this.getWeather} />
-                  <CurrentTempDisplay 
+                  <FiveDaysForecastDisplay 
                     temperature={this.state.temperature} 
                     city={this.state.city}
                     country={this.state.country}
@@ -67,4 +67,4 @@ class CurrentTemp extends React.Component {
   }
 };
 
-export default CurrentTemp;
+export default FiveDaysForecast;

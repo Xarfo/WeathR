@@ -1,12 +1,7 @@
-
-// import CurrentTemp from './components/Pages/CurrentTemp';
-// import FiveDayForecast from './components/Pages/FivedayForecast/FiveDayForecast'
-
-
 import React from "react";
-
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import CurrentTemp from "./components/Pages/CurrentTemp/CurrentTemp.jsx";
-
+import FiveDaysForecast from './components/Pages/FiveDaysForecast/FiveDaysForecast.jsx'
 
 
 class BaseRoutes extends React.Component {
@@ -14,7 +9,24 @@ class BaseRoutes extends React.Component {
   render() {
     return (
       <>
-        <CurrentTemp />
+      <div className='navBar'>        
+        <NavLink to="/">
+          Current Temperature
+        </NavLink>
+        <NavLink to="/5daysforcast">
+         Five Days Forecast
+        </NavLink>
+      </div> 
+      <Route
+          exact
+          path="/"
+          component={CurrentTemp}
+        />
+        <Route
+          exact
+          path="/5daysforecast"
+          component={FiveDaysForecast}
+        />
       </>
     );
   }
