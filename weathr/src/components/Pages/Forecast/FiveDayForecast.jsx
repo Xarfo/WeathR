@@ -28,7 +28,7 @@ getForecast = async (e) => {
 
   if (city && country) {
     this.setState({
-      temperature: [1,2,3,4,5],
+      temperature: [data.list[0].main.temp,data.list[1].main.temp, data.list[2].main.temp, data.list[3].main.temp, data.list[4].main.temp],
       city: data.city.name,
       country: data.city.country,
       error: ""

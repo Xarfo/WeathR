@@ -11,7 +11,13 @@ const ForecastDisplayList = props =>
         }
         { 	
             props.temperatures && <p className="weather__key"> Temperature: 
-                <span className="weather__value"> { props.temperatures }	</span>
+                <span className="weather__value"> { props.temperatures.map(temperature => 
+                     (
+                        <ul>
+                            {temperature}
+                        </ul>
+                    )
+                ) }</span>
             </p> 
         }
         </div>
@@ -20,3 +26,4 @@ const ForecastDisplayList = props =>
 
 
 export default ForecastDisplayList;
+
