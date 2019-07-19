@@ -1,5 +1,5 @@
 import React from "react";
-import logo from  "/Users/abdulahmad/Lambda-Projects/WeathR/weathr/src/img/logo.png"
+import logo from  "../../img/logo.png"
 
 const Titles = () => (
 	<div>
