@@ -1,4 +1,11 @@
 import React from "react";
+//import moment from 'moment';
+import styled from 'styled-components';
+
+const Wrapper = styled.div `
+display: flex;
+border: solid 2px red;
+`
 
 const ForecastDisplayList = props =>  
     (
@@ -10,7 +17,13 @@ const ForecastDisplayList = props =>
             </p> 
         }
         { 	
-            props.temperatures && <p className="weather__key"> Temperature: 
+            props.temperatures && <p className="weather__key"> <h1>Forecast:</h1> 
+            <Wrapper className='day-temp-container'>
+            <span>{props.days.map(day => (
+                                <ul>
+                                    {day}
+                                </ul>
+                            ))}</span>
                 <span className="weather__value"> { props.temperatures.map(temperature => 
                      (
                         <ul>
@@ -18,6 +31,7 @@ const ForecastDisplayList = props =>
                         </ul>
                     )
                 ) }</span>
+                </Wrapper>
             </p> 
         }
         </div>
@@ -26,4 +40,3 @@ const ForecastDisplayList = props =>
 
 
 export default ForecastDisplayList;
-
