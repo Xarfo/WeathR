@@ -11,7 +11,7 @@ class BaseRoutes extends React.Component {
       <>
       <div className='navBar'>        
         <NavLink to="/">
-          <h1>Current Temperature</h1>
+         <span><h1>Current Temperature</h1></span>
         </NavLink>
         <NavLink to="/forecast">
          <h1>Forecast</h1>
