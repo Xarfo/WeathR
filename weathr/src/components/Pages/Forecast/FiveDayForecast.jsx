@@ -21,13 +21,16 @@ getForecast = async (e) => {
   e.preventDefault();
   const city = e.target.elements.city.value;
   const country = e.target.elements.country.value;
-  const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
+  const api_call = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}&units=metric`);
   const data = await api_call.json();
+  console.log(data);
+  console.log(data.list[1].main.temp)
+
   if (city && country) {
     this.setState({
-      temperature: data.main.temp,
-      city: data.name,
-      country: data.sys.country,
+      temperature: [1,2,3,4,5],
+      city: data.city.name,
+      country: data.city.country,
       error: ""
     });
   } else {
@@ -54,10 +57,9 @@ getForecast = async (e) => {
                 <div className="col-xs-7 form-container">
                   <Form getForecast={this.getForecast} />
                   <ForecastList 
-                    temperature={this.state.temperature} 
-                    city={this.state.city}
-                    country={this.state.country}
-                    error={this.state.error}
+                  temperatures={this.state.temperature} 
+                  city={this.state.city}
+                  country={this.state.country}
                   />
                 </div>
               </div>
