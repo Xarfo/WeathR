@@ -2,6 +2,12 @@ import React from "react";
 import Form from "./Form.jsx";
 import Titles from "./Titles";
 import ForecastList from "./ForecastList.jsx";
+import styled from 'styled-components';
+//import moment from 'moment';
+
+const Wrapper = styled.div `
+background: palevioletred;
+`
 
 const API_KEY = "910e092423bb6a4d8eda2017888b3a8c";
 
@@ -11,6 +17,7 @@ class FiveDayForecast extends React.Component {
     error: undefined,
     city: undefined,
     country: undefined,
+    days: undefined,
   }
 
 //   componentDidMount() {
@@ -23,6 +30,7 @@ getForecast = async (e) => {
   const country = e.target.elements.country.value;
   const api_call = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}&units=metric`);
   const data = await api_call.json();
+  console.log()
   console.log(data);
   console.log(data.list[1].main.temp)
 
@@ -31,6 +39,7 @@ getForecast = async (e) => {
       temperature: [data.list[0].main.temp,data.list[1].main.temp, data.list[2].main.temp, data.list[3].main.temp, data.list[4].main.temp],
       city: data.city.name,
       country: data.city.country,
+      days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       error: ""
     });
   } else {
@@ -47,7 +56,7 @@ getForecast = async (e) => {
   render() {
     return (
       <>
-        <div className="wrapper">
+        <Wrapper className="wrapper">
           <div className="main">
             <div className="container">
               <div className="row">
@@ -60,12 +69,13 @@ getForecast = async (e) => {
                   temperatures={this.state.temperature} 
                   city={this.state.city}
                   country={this.state.country}
+                  days={this.state.days}
                   />
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </Wrapper>
       </>
     );
   }
